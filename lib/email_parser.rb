@@ -10,6 +10,9 @@ def initialize(emails)
   @emails = emails
 end
 
+def parse
+  emails.split.collect {|list| list.split(" , ")}.flatten
+end
 
 
 end
