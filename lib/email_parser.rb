@@ -6,13 +6,13 @@
 class EmailParser
   attr_accessor :emails
 
-def initialize(emails)
-  @emails = emails
-end
+  def initialize(emails)
+    @emails = emails
+  end
 
-def parse
-  emails.split.collect {|list| list.split(" , ")}.flatten.uniq
-end
+  def parse
+    email_list = @emails.gsub(",", " ")
+    email_list.split(" ").uniq
+  end
 
-
-end
+end 
